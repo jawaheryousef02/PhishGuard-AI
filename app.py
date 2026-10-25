@@ -23,14 +23,14 @@ st.write(
 
 @st.cache_resource
 def load_ai_model():
-    model_path = Path(__file__).resolve().parent / "distilbert_model"
+    model_id = "Jawaheryousef/PhishGuard-AI-DistilBERT"
 
     tokenizer = AutoTokenizer.from_pretrained(
-        str(model_path)
+        model_id
     )
 
     model = AutoModelForSequenceClassification.from_pretrained(
-        str(model_path)
+        model_id
     )
 
     model.eval()
